@@ -21,4 +21,10 @@ git log - Displays all commits along with their author, date, and message.
 git status - Displays whether your branch is up to date or not along with any changes that have not been commited, as well as untracked files (if any).
 
 (f)
+git log --follow src/edu/fsu/cs/cen4021/RoleGame.java
 
+(g)
+git log --grep "file"
+
+(h)
+git log --author=Alice --after=09/01/2016 --until=09/16/2016
