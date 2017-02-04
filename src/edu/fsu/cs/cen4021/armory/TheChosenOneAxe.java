@@ -37,22 +37,23 @@ class TheChosenOneAxe extends BasicWeapon implements Weapon {
         try {
             BufferedReader in = new BufferedReader(new FileReader("conf/thechosenone.txt"));
             String newstr;
-            String oldstr = null;
+            String oldstr = "oldstr";
             boolean first = true;
-            int strcount = 0;
+            int count = 1;
 
             try {
                 while ((newstr = in.readLine()) != null) {
-                    if (first) {
-                        newstr = oldstr;
+                    if(first){
+                        oldstr = newstr;
                         first = false;
                     }
 
-                    if (newstr.equals(oldstr)) {
-                        strcount++;
-                        oldstr = newstr;
-                    } else {
-                        return strcount;
+                    if(newstr.equals(oldstr)){
+                        count++;
+                    }
+
+                    else{
+                        return count;
                     }
                 }
             } catch (IOException ex) {

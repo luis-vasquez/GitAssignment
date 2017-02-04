@@ -40,23 +40,34 @@ class AncientMagicStaff extends BasicWeapon implements Weapon {
     public static int getDamage() {
         try {
             List<Integer> inputlist;
-            ObjectInputStream ancientobj = new ObjectInputStream(new FileInputStream("config/ancientstaff.obj"));
+            ObjectInputStream ancientobj = new ObjectInputStream(new FileInputStream("conf/ancientstaff.obj"));
 
             try {
                 double temp;
                 inputlist = (List<Integer>) ancientobj.readObject();
 
                 for(int i = 0; i < inputlist.size(); i++){
+                    //System.out.println("Before: " + inputlist.get(i));
                     temp = (inputlist.get(i)).doubleValue();
                     temp = Math.pow(temp, 2.0);
 
                     inputlist.set(i, new Integer((int) temp));
+                    System.out.println("Num " + i + ":" + + inputlist.get(i));
                 }
 
                 inputlist.remove(2);
                 inputlist.remove(5);
 
+                for(Integer num : inputlist){
+                    System.out.println(num);
+                }
+
+                System.out.println("\n");
                 Collections.reverse(inputlist);
+
+                for(Integer num : inputlist){
+                    System.out.println(num);
+                }
 
                 return inputlist.get(1) + inputlist.get(3) + inputlist.get(7);
             }
