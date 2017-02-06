@@ -8,6 +8,13 @@ import java.io.IOException;
 /**
  * Created by luis on 2/2/17.
  */
+
+/*
+Source code for file reading:
+http://stackoverflow.com/questions/5868369/how-to-read-a-large-text-file-line-by-line-using-java
+http://www.cs.fsu.edu/~myers/cop3252/notes/examples/text/ch17/CopyFileUsingByteStream.java
+*/
+
 class TheChosenOneAxe extends BasicWeapon implements Weapon {
     TheChosenOneAxe(int DAMAGE) {
         super ( DAMAGE );
